@@ -43,7 +43,7 @@ Immediate alerts are pushed to the glasses for:
 - ⏸ Print paused / ▶ resumed
 - ⚠️ Printer error
 
-## Glasses protocol (TCP :8089)
+## Data sent to the glasses
 
 Each message is a JSON object followed by `\n`:
 
@@ -76,7 +76,7 @@ The only thing left for each app is filling in the three credential constants (`
 
 ## Setup
 
-1. Open `RokidSnapmaker.xcodeproj` in Xcode 15+.
+1. Open `RokidSnapmaker.xcworkspace` in Xcode 15+ (after running `pod install`) 15+.
 2. Set your team in Signing & Capabilities.
 3. Build and run on an iPhone (iOS 17+) **on the same Wi-Fi as your Snapmaker U1**.
 4. Allow local network permission when prompted.
