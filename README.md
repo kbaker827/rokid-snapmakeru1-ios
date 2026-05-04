@@ -53,6 +53,27 @@ Each message is a JSON object followed by `\n`:
 {"type":"alert","text":"✅ Print complete: Benchy"}
 ```
 
+## SDK Setup
+
+The glasses now connect over **Bluetooth via the Rokid AI glasses SDK** — no Wi-Fi port or TCP server needed.
+
+The only thing left for each app is filling in the three credential constants (`kAppKey`, `kAppSecret`, `kAccessKey`) from [account.rokid.com/#/setting/prove](https://account.rokid.com/#/setting/prove), then running `pod install`.
+
+1. **Get credentials** at <https://account.rokid.com/#/setting/prove> and paste them into the glasses Swift file:
+   ```swift
+   private let kAppKey    = "YOUR_APP_KEY"
+   private let kAppSecret = "YOUR_APP_SECRET"
+   private let kAccessKey = "YOUR_ACCESS_KEY"
+   ```
+
+2. **Install CocoaPods dependencies** from the repo root:
+   ```bash
+   pod install
+   open *.xcworkspace   # always open the .xcworkspace, not .xcodeproj
+   ```
+
+3. *(Glasses now connect automatically over Bluetooth — no TCP port needed.)*
+
 ## Setup
 
 1. Open `RokidSnapmaker.xcodeproj` in Xcode 15+.
@@ -64,7 +85,7 @@ Each message is a JSON object followed by `\n`:
 6. Tap **Connect & Authorize** — the machine displays an authorization dialog.
 7. Tap **Allow** on the Snapmaker screen.
 8. Print status starts streaming immediately.
-9. Connect Rokid glasses to the same Wi-Fi; point the glasses TCP client at `<phone-ip>:8089`.
+9. *(Glasses now connect automatically over Bluetooth — no TCP port needed.)*
 
 ## Polling
 
