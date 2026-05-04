@@ -1,11 +1,17 @@
 # Rokid Snapmaker U1
 
+
+> **🔵 Connectivity Update — May 2025**
+> The glasses connection has been migrated from **raw TCP sockets** to
+> **Bluetooth via the Rokid AI glasses SDK** (`pod 'RokidSDK' ~> 1.10.2`).
+> No Wi-Fi port forwarding is needed. See **SDK Setup** below.
+
 iOS app that polls your [Snapmaker U1](https://snapmaker.com) over the local network and streams live print status to Rokid AR glasses.
 
 ## How it works
 
 ```
-Snapmaker U1  ──HTTP :8080──▶  iPhone (RokidSnapmaker)  ──TCP :8089──▶  Rokid Glasses
+Snapmaker U1  ──HTTP :8080──▶  iPhone (RokidSnapmaker)  ──Bluetooth/RokidSDK──▶ Rokid Glasses
 ```
 
 No cloud required. The app talks directly to the machine's built-in HTTP API on your local Wi-Fi.
